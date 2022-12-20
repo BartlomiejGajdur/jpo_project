@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 
-
 using namespace std;
 
 class Calculator
@@ -15,11 +14,10 @@ class Calculator
 
     public:
 
-        Calculator() : p_var1(0), p_var2(0), p_operation('*'), p_oper_result("0") {}
-
-        double setVar1(double var);
-        double setVar2(double var);
-        void setOperation(char operation);
+        void hello();
+        double setVar1();
+        double setVar2();
+        void setOperation();
         void calculate();
         string getResult();
         string toHex();

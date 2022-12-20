@@ -6,24 +6,49 @@
 #include <cmath>
 #include <cstdlib>
 
-
-
 using namespace std;
 
-double Calculator::setVar1(double var)
+void Calculator::hello()
 {
+    cout << endl <<  "Witam w kalkulatorze dla elektronikow. " << endl;
+    cout << "---------------------------------------" << endl;
+    cout << "Co moge dla ciebie zrobic?" << endl;
+    cout << "---------------------------------------" << endl;
+    cout << "Opcje:" << endl;
+    cout << "---------------------------------------" << endl;
+    cout << "1. Dodawanie" << endl;
+    cout << "2. Odejmowanie" << endl;
+    cout << "3. Mnozenie" << endl;
+    cout << "4. Dzielenie" << endl;
+    cout << "5. Wyjdz" << endl;
+    cout << endl;
+}
+
+double Calculator::setVar1()
+{
+    double var;
+    cout << "Podaj pierwsza wartosc: ";
+    cin >> var;
+    cout << endl;
     p_var1 = var;
     return p_var1;
 }
 
-double Calculator::setVar2(double var)
+double Calculator::setVar2()
 {
+    double var;
+    cout << "Podaj druga wartosc: ";
+    cin >> var;
+    cout << endl;
     p_var2 = var;
     return p_var2;
 }
 
-void Calculator::setOperation(char operation)
+void Calculator::setOperation()
 {
+    char operation;
+    cout << "Wybierz operacje (podaj numer operacji): ";
+    cin >> operation;
     p_operation = operation;
 }
 
@@ -34,23 +59,25 @@ void Calculator::calculate()
 
     switch (p_operation)
     {
-        case '+':
+        case '1':
             resultStream << p_var1 + p_var2;
             break;
-        case '-':
+        case '2':
             resultStream << p_var1 - p_var2;
             break;
-        case '*':
+        case '3':
             resultStream << p_var1 * p_var2;
             break;
-        case '/':
+        case '4':
             resultStream << p_var1 / p_var2;
             break;
+        case '5':
+            cout << "Dowidzenia!";
+            exit(0);
         default:
             cout << "Invalid operation" << endl;
             break;
     }
-    
     p_oper_result = resultStream.str();
 }
 

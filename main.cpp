@@ -5,19 +5,24 @@ using namespace std;
 
 int main()
 {
-    Calculator calc;
+    while(true)
+    {
+        Calculator calc;
 
-    calc.setVar1(10.5);
-    calc.setVar2(5.2);
-    calc.setOperation('-');
+        calc.hello();
+        calc.setVar1();
+        calc.setVar2();
+        calc.setOperation();
 
-    calc.calculate();
-    cout << "Result: " << calc.getResult() << endl;
+        calc.calculate();
+        cout << "Result: " << calc.getResult() << endl;
 
-    cout << "Hex: " << calc.toHex() << endl;
-    cout << "Bin: " << calc.toBin() << endl;
-    cout << "Oct: " << calc.toOct() << endl;
+        cout << "Hex: " << calc.toHex() << endl;
+        cout << "Bin: " << calc.toBin() << endl;
+        cout << "Oct: " << calc.toOct() << endl;
 
-    getchar();getchar();
+        getchar();getchar();
+        system("cls");
+    }
     return 0;
 }
