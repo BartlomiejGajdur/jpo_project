@@ -24,7 +24,7 @@ double Calculator::setVar2(double var)
 
 void Calculator::setOperation(char operation)
 {
-    p_oper_result = operation;
+    p_operation = operation;
 }
 
 void Calculator::calculate()

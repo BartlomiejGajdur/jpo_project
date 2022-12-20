@@ -9,7 +9,7 @@ int main()
 
     calc.setVar1(10.5);
     calc.setVar2(5.2);
-    calc.setOperation('+');
+    calc.setOperation('-');
 
     calc.calculate();
     cout << "Result: " << calc.getResult() << endl;
