@@ -24,28 +24,34 @@ void Calculator::hello()
     cout << endl;
 }
 
-double Calculator::setVar1()
+void Calculator::setVar1()
 {
-    double var;
+    // Niepotrzebne deklaracje zmiennych 
     cout << "Podaj pierwsza wartosc: ";
-    cin >> var;
-    cout << endl;
-    p_var1 = var;
-    return p_var1;
+    cin >> p_var1;
+    //Tutaj przykladowa obsluga tego cina, ale ewentualnie mozesz probowac zrobic z do whilem
+    //Dopoki Cin.fail jest true to wpisuj liczbe.
+    if(cin.fail())
+    {
+        cout<<"Nie wpisales chyba liczby kolezko";
+        flag = false;
+    }
+    cout<<endl;
 }
 
-double Calculator::setVar2()
+void Calculator::setVar2()
 {
-    double var;
     cout << "Podaj druga wartosc: ";
-    cin >> var;
+    cin >> p_var2;
     cout << endl;
-    p_var2 = var;
-    return p_var2;
+    
 }
 
 void Calculator::setOperation()
 {
+    /*
+    ja raczej jak masz proste menu to robie zamiast char w swichu to size_t/ int operation łatwiej chyba to walidowac
+    */ 
     char operation;
     cout << "Wybierz operacje (podaj numer operacji): ";
     cin >> operation;
@@ -54,6 +60,7 @@ void Calculator::setOperation()
 
 void Calculator::calculate()
 {
+    // to fajnie w summie zrobione 
     stringstream resultStream;
     resultStream << fixed << setprecision(2);
 
@@ -89,6 +96,9 @@ string Calculator::getResult()
     return p_oper_result;
 }
 
+//Na wypisuwanie nie patrzyłem ale jak do niczego nie korzystasz to tez chyba bym proste voidy zrobił bo zwracasz niepotrzebnie jakas zienna
+//Czyli np w mainie zamiast cout<<"Result" <<......<..... to zrobił funkcji void Calculator::PrintToHex i tylko ją wywołwywał
+// i ogolnie  wtych funkcji nie sprawdzalem bo nie bawilem sie za duzo w hexach oct itpp.... i tam sa raczej tylko sprawy wizualne
 string Calculator::toHex()
 {
     stringstream resultStream;
@@ -102,6 +112,7 @@ string Calculator::toHex()
 
     return resultStream.str();
 }
+
 
 string Calculator::toBin()
 {
