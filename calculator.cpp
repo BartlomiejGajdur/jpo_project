@@ -69,7 +69,10 @@ void Calculator::calculate()
             resultStream << p_var1 * p_var2;
             break;
         case '4':
-            resultStream << p_var1 / p_var2;
+            if (p_var2 == 0)
+                cout << "Nie mozna dzielic przez 0!" << endl;
+            else
+                resultStream << p_var1 / p_var2;
             break;
         case '5':
             cout << "Dowidzenia!";

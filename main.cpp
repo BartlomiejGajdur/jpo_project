@@ -13,10 +13,8 @@ int main()
         calc.setVar1();
         calc.setVar2();
         calc.setOperation();
-
         calc.calculate();
         cout << "Result: " << calc.getResult() << endl;
-
         cout << "Hex: " << calc.toHex() << endl;
         cout << "Bin: " << calc.toBin() << endl;
         cout << "Oct: " << calc.toOct() << endl;
